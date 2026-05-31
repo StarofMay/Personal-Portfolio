@@ -645,9 +645,8 @@ body.modal-open {
 /* --- The Main Background Card Asset Containers --- */
 .opened-folder-card {
     width: 90%;
-    max-width: 1000px;
     border-radius: 24px;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     position: relative;
