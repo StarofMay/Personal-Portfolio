@@ -646,8 +646,8 @@ body.modal-open {
 .opened-folder-card {
     width: 100%;
     max-width: 800px;
-    height: 400px;
-    padding: 35px;
+    height: 550px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     position: relative;
