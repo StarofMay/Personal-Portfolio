@@ -57,7 +57,7 @@ body.modal-open {
 
 .nav-link {
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
     letter-spacing: 1px;
     transition: transform 0.2s ease;
@@ -89,12 +89,12 @@ body.modal-open {
 /* --- Typography Styles --- */
 .serif-text {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .script-text {
     font-family: 'Caveat', cursive;
-    font-size: 7.5rem;
+    font-size: 6.5rem;
     font-weight: 700;
 }
 
@@ -122,15 +122,15 @@ body.modal-open {
 .sub-text {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1rem;
     line-height: 1.2;
     margin-left: 40px;
     font-style: italic;
 }
 
 .sun-asset {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     margin-right: -10px;
 }
 @keyframes rotateSun {
@@ -200,7 +200,7 @@ body.modal-open {
 
 .sec_message {
     color: #ff8b60;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 80px;
 }
 
@@ -236,7 +236,7 @@ body.modal-open {
     transform: rotate(-6deg);
     filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.12));
     width: 100%;
-    max-width: 440px;
+    max-width: 420px;
 }
 
 .profile-stamp-img {
@@ -248,7 +248,7 @@ body.modal-open {
 .envelope-wrapper {
     position: relative;
     width: 100%;
-    max-width: 540px;
+    max-width: 440px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -282,8 +282,8 @@ body.modal-open {
 }
 
 .mini-flower {
-    width: 55px;
-    height: 55px;
+    width: 45px;
+    height: 45px;
 }
 
 .click-hint-container {
@@ -351,7 +351,7 @@ body.modal-open {
 .opened-letter-card {
     background-color: #ff8fa4;
     width: 90%;
-    max-width: 1050px;
+    max-width: 950px;
     border-radius: 24px;
     padding: 40px;
     display: flex;
@@ -370,7 +370,7 @@ body.modal-open {
 
 .letter-title {
     font-family: 'Caveat', cursive;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 25px;
     line-height: 1.1;
 }
@@ -385,7 +385,7 @@ body.modal-open {
 
 .letter-toolkit {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-top: 10px;
     margin-bottom: 15px;
 }
@@ -395,8 +395,8 @@ body.modal-open {
     margin-bottom: 40px;
 }
 .tool-square {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.9);
     display: flex;
@@ -441,7 +441,7 @@ body.modal-open {
 }
 
 .letter-open-img {
-    width: 450px;
+    width: 250px;
     height: auto;
     display: block;
 }
@@ -474,7 +474,7 @@ body.modal-open {
     position: absolute;
     top: 0;
     left: 0;
-    width: 450px;
+    width: 250px;
     height: auto;
     animation: gifFrameB 1s steps(1) infinite;
 }
@@ -501,8 +501,8 @@ body.modal-open {
 
 .character-box {
     position: relative;
-    width: 450px;
-    height: 350px;
+    width: 350px;
+    height: 250px;
 }
 
 .char-layer {
@@ -511,7 +511,7 @@ body.modal-open {
 }
 
 .layer-body {
-    width: 580px;
+    width: 380px;
     height: auto;
     bottom: -40px;
     left: 0;
@@ -519,7 +519,7 @@ body.modal-open {
 }
 
 .layer-head {
-    width: 150px;
+    width: 100px;
     height: auto;
     top: -22px;
     left: 195px;
@@ -529,7 +529,7 @@ body.modal-open {
 }
 
 .layer-hand {
-    width: 90px;
+    width: 80px;
     height: auto;
     bottom: -18px;
     left: 185px;
@@ -564,7 +564,7 @@ body.modal-open {
 .italic-serif {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 5.5rem;
+    font-size: 4.5rem;
     color: #4fa4ff;
     margin-top: -10px;
 }
@@ -575,8 +575,8 @@ body.modal-open {
 }
 
 .flower-small {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
 }
 
 /* --- Fixed Folder Grid Layout System --- */
@@ -596,7 +596,7 @@ body.modal-open {
     padding: 0;
     cursor: pointer;
     flex: 1;
-    max-width: 250px;
+    max-width: 200px;
     transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
 }
 
@@ -645,8 +645,8 @@ body.modal-open {
 /* --- The Main Background Card Asset Containers --- */
 .opened-folder-card {
     width: 100%;
-    max-width: 900px;
-    height: 600px;
+    max-width: 850px;
+    height: 500px;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -772,14 +772,14 @@ body.modal-open {
 
 .work-title {
     font-family: 'Short Stack', cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
     line-height: 1.1;
     margin-bottom: 10px;
 }
 
 .work-description {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     line-height: 1.45;
 }
 
@@ -794,7 +794,7 @@ body.modal-open {
 
 .palette-caption {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 .swatches-row {
@@ -803,8 +803,8 @@ body.modal-open {
 }
 
 .swatch-block {
-    width: 44px;
-    height: 44px;
+    width: 34px;
+    height: 34px;
     background-color: #e0e0e0;
     border-radius: 8px;
 }
@@ -904,7 +904,7 @@ body.modal-open {
 .contact-me-text {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 5rem;
+    font-size: 4rem;
     color: #ff698a;
     margin-top: -15px;
 }
@@ -914,7 +914,7 @@ body.modal-open {
     flex-direction: column;
     gap: 22px;
     margin: 40px 0;
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .contact-item-row {
@@ -928,8 +928,8 @@ body.modal-open {
 }
 
 .blue-square-bullet {
-    width: 28px;
-    height: 28px;
+    width: 25px;
+    height: 25px;
     border-radius: 6px;
     background-color: #4fa4ff;
     display: inline-flex;
@@ -962,7 +962,7 @@ body.modal-open {
 }
 
 .portrait-double-point {
-    max-height: 680px;
+    max-height: 580px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -996,7 +996,7 @@ body.modal-open {
     right: 0;
     animation: footerFrameB 1s steps(1) infinite;
     transform-origin: bottom center;
-    max-height: 680px;
+    max-height: 580px;
 }
 
 .timestamp-note {
