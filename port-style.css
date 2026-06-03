@@ -1,1154 +1,559 @@
+/* --- UNIVERSAL RESET & BASE STYLES --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* for no left-right scrollbar */
-html, body {
-    width: 100%;
-    max-width: 100vw;
-    overflow-x: hidden; 
+
+:root {
+    /* Base font-size set to 16px. 1rem = 16px. Scales cleanly everywhere! */
+    font-size: 16px; 
 }
+
 body {
-    background-color: #b33c0c;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 0;
-    font-family: 'Short Stack', cursive;
-}
-/*to stop the web page from scrolling when overlay opens*/
-body.modal-open {
-    overflow: hidden; 
-    height: 100vh;
+    background-color: #fffae0;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: hidden;
 }
 
-
-/*yellow bg where everything is contained*/
+/* --- MAIN CONTAINER & BACKGROUND ACCENTS --- */
 .container {
-    background-image: url(bg.png);
+    width: 100vw;
+    min-height: 100vh;
+    background-image: url('assets/decor_1.png');
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    width: 95%;
-    height: 100%;
     position: relative;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    padding: 2.5rem;
 }
 
-
-/* --- Navigation --- */
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-    gap: 40px;
-    width: 100%;
-    padding-right: 40px;
-    position: fixed;
-    top: 50px;
-    right: 0;
-    z-index: 1000;
-}
-.nav-link {
-    text-decoration: none;
-    font-size: 2.344vh;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: transform 0.2s ease;
-}
-.nav-link:hover {
-    color: rgb(255, 21, 103);
-    transform: scale(1.2);
-}
-@media (max-width: 768px) {
-    .navbar {
-        gap: 20px;
-        padding-right: 20px;
-    }
-    .nav-link {
-        font-size: 1.563vh;
-    }
-}
-@media (max-width: 480px) {
-   .navbar {
-        gap: 20px;
-        padding-right: 20px;
-    }
-    .nav-link {
-        font-size: 1.2vh;
-    }
-}
-
-
-/*Landing page styling*/
-.landing-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    gap: 40px;
-    padding: 140px 0;
-}
-.landing-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    position: relative;
-}
-/*text styling*/
-.landing-heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 6.25vh;
-}
-.landing-cursive {
-    font-family: 'Caveat', cursive;
-    font-size: 14.063vh;
-    font-weight: 700;
-}
-
-/*text colors*/
-.dark { color: #0c181c; }
-.pink { color: #ff6084; }
-.blue { color: #4fa4ff; }
-.orange { color: #f06400; }
-
-/*general font style*/
-.heading-cur {
-   font-family: 'Playfair Display', serif;
-   font-size: 8vh;
-   font-style: italic;
-}
-.heading-norm {
-   font-family: 'Playfair Display', Georgia, serif;
-   font-size: 3vh;
-}
-.par-norm {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.563vh;
-    line-height: 1.5;
-}
-.par-cur {
-    font-family: 'Caveat', cursive;
-    font-size: 1.563vh;
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-/* Line Layouts */
-.line-one {
-    display: flex;
-    align-items: center;
-    gap: 2.441vh;
-    position: relative;
-}
-.line-two {
-    display: flex;
-    align-items: center;
-    gap: 2.441vh;
-    margin-top: -3.906vh;
-    padding-left: 2.441vh;
-}
-.sub-text {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.344vh;
-    line-height: 1.2;
-    margin-left: 40px;
-    font-style: italic;
-}
-
-.sun-asset {
-    width: 14vh;
-    height: 14vh;
-    margin-right: -1.042vh;
-}
-@keyframes rotateSun {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-.sun-asset {
-    animation: rotateSun 20s linear infinite;
-}
-
-.flower-row {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 40px;
-}
-
-.flower-asset {
-    width: 4vh;
-    height: 4vh;
-}
-/* --- Floating Flower Animations --- */
-@keyframes floatA {
-    0%   { transform: translateY(0px) rotate(0deg); }
-    30%  { transform: translateY(-14px) rotate(8deg); }
-    60%  { transform: translateY(-6px) rotate(-4deg); }
-    80%  { transform: translateY(-16px) rotate(6deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-}
-@keyframes floatB {
-    0%   { transform: translateY(0px) rotate(0deg); }
-    25%  { transform: translateY(-10px) rotate(-7deg); }
-    55%  { transform: translateY(-18px) rotate(5deg); }
-    75%  { transform: translateY(-8px) rotate(-3deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-}
-@keyframes floatC {
-    0%   { transform: translateY(0px) rotate(0deg); }
-    20%  { transform: translateY(-16px) rotate(5deg); }
-    50%  { transform: translateY(-4px) rotate(-8deg); }
-    70%  { transform: translateY(-12px) rotate(3deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-}
-@keyframes floatD {
-    0%   { transform: translateY(0px) rotate(0deg); }
-    35%  { transform: translateY(-12px) rotate(-6deg); }
-    65%  { transform: translateY(-20px) rotate(7deg); }
-    85%  { transform: translateY(-5px) rotate(-2deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* Hero flower row — each one gets its own animation */
-.flower-row .flower-asset:nth-child(1) { animation: floatA 3.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite; }
-.flower-row .flower-asset:nth-child(2) { animation: floatB 2.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.4s; }
-.flower-row .flower-asset:nth-child(3) { animation: floatC 3.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.9s; }
-.flower-row .flower-asset:nth-child(4) { animation: floatD 3.0s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.2s; }
-
-/* About section mini flowers */
-.mini-decor-row .mini-flower:nth-child(1) { animation: floatB 3.0s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.6s; }
-.mini-decor-row .mini-flower:nth-child(2) { animation: floatD 2.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.1s; }
-.mini-decor-row .mini-flower:nth-child(3) { animation: floatA 3.3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.8s; }
-
-/* Works section small flowers */
-.flower-mini-group .flower-small:nth-child(1) { animation: floatC 2.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.3s; }
-.flower-mini-group .flower-small:nth-child(2) { animation: floatA 3.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.7s; }
-.flower-mini-group .flower-small:nth-child(3) { animation: floatB 3.1s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite 0.5s; }
-
-@media (max-width: 768px) {
-    .landing-heading {
-        font-size: 4.688vh;
-    }
-    .landing-cursive {
-        font-size: 10vh;
-    }
-     .sub-text {
-        font-size: 1.5vh;
-        margin-left: 20px;
-    }
-    .sun-asset {
-        width: 8vh;
-        height: 8vh;
-    }
-    .flower-asset {
-        width: 2vh;
-        height: 2vh;
-    }
-}
-@media (max-width: 480px) {
-    .landing-heading {
-        font-size: 2.688vh;
-    }
-    .landing-cursive {
-        font-size: 5vh;
-    }
-     .sub-text {
-        font-size: 1.25vh;
-        margin-left: 20px;
-    }
-    .sun-asset {
-        width: 5.5vh;
-        height: 5.5vh;
-    }
-    .flower-asset {
-        width: 1.5vh;
-        height: 1.5vh;
-    }
-}
-
-
-/*About section styling*/
-.about-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    width: 100%;
-    gap: 20px;
-    padding: 100px 0;
-    margin-bottom: 60px;
-}
-
-.left {
-    padding: 40px;
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-/* --photo GIF swap-- */
-.gif-layout {
-    width: fit-content;
-    transform: rotate(5deg);
-    filter: drop-shadow(5px 12px 20px rgba(0,0,0,0.2));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.pictures {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.me-gif {
-    width: 50vh;
-    height: auto;
-    display: block;
-}
-
-/* Frame A: visible during 0-33%, hidden rest */
-@keyframes FrameA {
-    0%, 33.2%  { opacity: 1; }
-    33.3%, 100% { opacity: 0; }
-}
-/* Frame B: visible during 33-66%, hidden rest */
-@keyframes FrameB {
-    0%, 33.2%  { opacity: 0; }
-    33.3%, 66.5% { opacity: 1; }
-    66.6%, 100% { opacity: 0; }
-}
-/* Frame C: visible during 66-100%, hidden rest */
-@keyframes FrameC {
-    0%, 66.5% { opacity: 0; }
-    66.6%, 100% { opacity: 1; }
-}
-
-.frame-a {
-    animation: FrameA 1.5s steps(1) infinite;
-}
-.frame-b {
+.clouds-decor {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 50vh;
-    height: auto;
-    animation: FrameB 1.5s steps(1) infinite;
-}
-.frame-c {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50vh;
-    height: auto;
-    animation: FrameC 1.5s steps(1) infinite;
-}
-@media (max-width: 768px) {
-    .left {
-        width: 100%;
-        padding: 20px;
-    }
-    .me-gif {
-        width: 40vh;
-    }
-}
-@media (max-width: 480px) {
-    .left {
-        width: 100%;
-        padding: 20px;
-    }
-    .me-gif {
-        width: 25vh;
-    }
-}
-
-/*about text layout*/
-.right {
-    padding: 40px;
-    width: 60%;
-}
-.about-layout {
-    background-color: #ff8fa4;
-    width: 100%;
-    max-width: 120vh;
-    border-radius: 24px;
-    padding: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-}
-.text-layout {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    color: #4a1525;
-}
-.about-header {
-    font-family: 'Caveat', cursive;
-    font-size: 6vh;
-    margin-bottom: 25px;
-    line-height: 1.1;
-}
-.quote-about {
-    font-family: 'Caveat', cursive;
-    font-size: 3vh;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    max-width: 500px;
-}
-.par-about {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5vh;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    max-width: 500px;
-}
-.letter-toolkit {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.5vh;
-    margin-top: 10px;
-    margin-bottom: 15px;
-}
-.toolkit-layout {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 40px;
-}
-.insert-logo {
-    width: 35px;
-    height: 35px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px;
-}
-.insert-logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        flex-direction: column;
-        padding: 60px 0;
-    }
-    .left, .right {
-        width: 100%;
-        padding: 20px;
-    }
-    .about-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .text-layout {
-        text-align: justify;
-    }
-    .about-header {
-        font-size: 4vh;
-    }
-    .quote-about {
-        font-size: 2.5vh;
-    }
-    .par-about {
-        font-size: 1vh;
-    }
-    .letter-toolkit {
-        font-size: 0.8vh;
-    }
-}
-@media (max-width: 480px) {
-    .about-section {
-        flex-direction: column;
-        padding: 40px 0;
-    }
-    .left, .right {
-        width: 100%;
-        padding: 20px;
-    }
-    .about-layout {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .text-layout {
-        text-align: justify;
-    }
-    .about-header {
-        font-size: 2.5vh;
-    }
-    .quote-about {
-        font-size: 2vh;
-    }
-    .par-about {
-        font-size: 1vh;
-    }
-    .letter-toolkit {
-        font-size: 0.6vh;
-    }
-}
-
-
-/*works section styling*/
-.works-section {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-around;
-    width: 100%;
-    height: auto;
-    padding: 40px 80px;
-}
-.animated-pic {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    min-height: 280px;
-    margin-bottom: 40px;
-    padding: 0 40px;
-    position: relative;
-}
-.character-box {
-    position: absolute; /*keeps moving parts together*/
-    left: 40px;
-    bottom: 0;
-    width: 60vh;
-    height: auto;
-}
-.char-layer {
-    position: absolute;
-    display: block;
-}
-.layer-body {
-    width: 100%;
-    height: auto;
-    bottom: -40px;
+    top: 0;
     left: 0;
+    background-image: url('assets/clouds.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    pointer-events: none;
     z-index: 1;
 }
-.layer-head {
-    width: 15vh;
-    height: auto;
-    top: -36.5vh;
-    left: 21vh;
-    z-index: 2;
-    transform-origin: bottom center;
-    animation: headBob 3s ease-in-out infinite alternate;
-}
-.layer-hand {
-    width: 8.5vh;
-    height: auto;
-    top: -10.4vh;
-    left: 20.2vh;
-    z-index: 3;
-    transform-origin: top center;
-    transition: transform 0.1s ease-out;
-}
-@keyframes headBob {
-    0% { transform: rotate(-5deg); }
-    100% { transform: rotate(5deg); }
+
+/* Decorative absolute stars/sparkles position fixes */
+.sparkle-decor, .sun-decor, .sparkle-right, .sparkle-left-bottom {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.headline-container {
+.sparkle-decor { width: 4.5rem; top: 12%; left: 8%; }
+.sun-decor { width: 11rem; top: 4%; right: 5%; }
+.sparkle-right { width: 3.5rem; top: 52%; right: 7%; }
+.sparkle-left-bottom { width: 5.5rem; bottom: 8%; left: 4%; }
+
+/* --- LANDING SECTION HEADER --- */
+.landing-text {
+    position: relative;
+    z-index: 2;
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+}
+
+.landing-heading {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3.5rem; /* Changed from 8vh */
+    color: #493628;
+    line-height: 1.1;
+}
+
+.landing-cursive {
+    font-family: "Sacramento", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 7rem; /* Changed from 16vh */
+    color: #E4B1F0;
+    display: inline-block;
+    margin-top: -1rem;
+    transform: rotate(-5deg);
+}
+
+/* --- INTERACTIVE UTILITY STYLES --- */
+.blur-background {
+    filter: blur(8px);
+    transition: filter 0.3s ease;
+}
+
+.unclickable {
+    pointer-events: none;
+}
+
+/* --- CENTER CHARACTER LAYERS --- */
+.character-box {
+    position: absolute;
+    width: 25rem;
+    height: 25rem;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.layer-body, .layer-head, .layer-hand {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.layer-body {
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/body_layer.png');
+    z-index: 3;
+}
+
+.layer-head {
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/head_layer.png');
+    z-index: 4;
+    top: -0.625rem;
+    transition: transform 0.3s ease;
+}
+
+.layer-hand {
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/hand_layer.png');
+    z-index: 5;
+    top: 0.625rem;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects for interactive character box */
+.character-box:hover .layer-head {
+    transform: translateY(-5px);
+}
+
+.character-box:hover .layer-hand {
+    transform: translateY(5px) translateX(2px);
+}
+
+/* --- BOTTOM INTERACTIVE DIRECTORY (FOLDERS) --- */
+.directory-container {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3.5rem;
+    z-index: 3;
+}
+
+.folder-wrapper {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-bottom: 40px;
-    flex-shrink: 0;
-}
-.curious-row {
-    display: flex;
     align-items: center;
-    gap: 15px;
-}
-
-.flower-mini-group {
-    display: flex;
-    gap: 8px;
-}
-.flower-small {
-    width: 2vh;
-    height: 2vh;
-}
-
-/* --- Fixed Folder Grid Layout System --- */
-.folders-layout,
-.folders-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    gap: 100px;
-    margin-top: 20px;
-    padding: 0 20px;
-}
-.folder-item-btn {
-    background: none;
-    border: none;
-    padding: 0;
     cursor: pointer;
-    flex: 1;
-    max-width: 200px;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.3s ease;
+    transition: transform 0.2s ease;
 }
-.folder-img-asset {
-    width: 100%;
+
+.folder-wrapper:hover {
+    transform: scale(1.08);
+}
+
+.folder-icon {
+    width: 5.5rem;
     height: auto;
-    display: block;
-}
-@media (max-width: 768px) {
-     .curious-row {
-        justify-content: center;
-        font-size: 1.5vh;
-    }
-    .folders-layout,
-    .folders-grid {
-        flex-direction: column;
-        gap: 60px;
-    }
-    .animated-pic {
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-        min-height: 450px;
-        padding: 0;
-    }
-    .character-box {
-        position: relative;
-        left: unset;
-        bottom: unset;
-        width: 60vh;
-        height: 280px;
-        margin-top: 20px;
-    }
-    .layer-head {
-        top: 0.7vh;
-        left: 20vh;
-        width: 16vh;
-    }
-    .layer-hand {
-        top: 26.5vh;
-        left: 18.5vh;
-        width: 8.7vh;
-    }
-    .headline-container {
-        align-items: center;
-        text-align: center;
-        z-index: 5;
-        padding-bottom: 0;
-    }
-}
-@media (max-width: 480px) {
-     .curious-row {
-        justify-content: center;
-        font-size: 1vh;
-    }
-    .folders-layout,
-    .folders-grid {
-        flex-direction: column;
-        gap: 60px;
-    }
-    .animated-pic {
-        flex-direction: column-reverse;
-        align-items: center;
-        justify-content: center;
-        min-height: 450px;
-        padding: 0;
-    }
-    .character-box {
-        position: relative;
-        left: unset;
-        bottom: unset;
-        width: 60vh;
-        height: 280px;
-        margin-top: 20px;
-    }
-    .layer-head {
-        top: 0.7vh;
-        left: 20vh;
-        width: 16vh;
-    }
-    .layer-hand {
-        top: 26.5vh;
-        left: 18.5vh;
-        width: 8.7vh;
-    }
-    .headline-container {
-        align-items: center;
-        text-align: center;
-        z-index: 5;
-        padding-bottom: 0;
-    }
+    filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
 }
 
-/* Opacity reduction across folders when group wrapper hovered */
-.folders-layout:hover .folder-item-btn,
-.folders-grid:hover .folder-item-btn {
-    opacity: 0.5;
-}
-/* Scale up the selected interactive template card asset natively */
-.folders-layout .folder-item-btn:hover,
-.folders-grid .folder-item-btn:hover {
-    opacity: 1 !important;
-    transform: scale(1.08) rotate(-1deg);
+.folder-label {
+    margin-top: 0.5rem;
+    font-size: 0.9rem; /* Changed from vh */
+    font-weight: bold;
+    color: #493628;
+    text-align: center;
+    background-color: rgba(255, 250, 224, 0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
-/* Shared dim backdrop */
-.folder-overlay {
+/* --- MODAL CARDS SYSTEM (OPENED FOLDERS) --- */
+.overlay-card-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(61, 38, 29, 0.65);
-    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 10;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 24px;
-    z-index: 2000;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.35s ease-in-out;
+    transition: opacity 0.3s ease;
 }
-.folder-overlay.active {
+
+.overlay-card-container.active {
     opacity: 1;
     pointer-events: auto;
 }
-/* --- The Main Background Card Asset Containers --- */
+
 .opened-folder-card {
-    width: 100%;
-    max-width: 150vh;
+    background-color: #fffef9;
+    width: 90%;
+    max-width: 800px;
     height: 550px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    filter: drop-shadow(0 25px 45px rgba(0,0,0,0.35));
-    border-radius: 20px;
-    overflow: hidden;
-}
-/* Connects your three new custom open folder image blueprints */
-.bg-open-pink { background-color: pink; }
-.bg-open-orange { background-color: orange; }
-.bg-open-yellow { background-color: yellow; }
-
-/* Interior Flex Content Layout formatting mapping wrappers */
-.folder-layout-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 30px 15px 30px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-/* Category header tag setups top-left */
-.folder-tagline {
-    font-family: 'Short Stack', cursive;
-    font-weight: bold;
-    font-size: 1.5vh;
-    letter-spacing: 1.5px;
-    margin-top: 5px;
-}
-
-/* Dynamic color variants matched nicely to your asset borders */
-.text-dark-pink { color: #4a1525; }
-.text-dark-orange { color: #512108; }
-.text-dark-yellow { color: #563b00; }
-
-.text-light-pink { color: #ffffff; }
-.text-light-orange { color: #ffffff; }
-.text-light-yellow { color: #ffffff; }
-
-/* Top bar with tagline and counter */
-.folder-top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-    flex-shrink: 0;
-}
-/* Mid-row showcase columns splitting context definitions */
-.folder-interactive-core {
-    display: none;
-    align-items: stretch;
-    gap: 30px;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-}
-.folder-interactive-core.active-page {
-    display: flex;
-}
-/* --- Page Flip Transition Keyframes --- */
-@keyframes pageEnterRight {
-    0%   { opacity: 0; transform: translateX(60px) scale(0.96); }
-    60%  { opacity: 1; transform: translateX(-8px) scale(1.01); }
-    80%  { transform: translateX(4px) scale(0.995); }
-    100% { opacity: 1; transform: translateX(0) scale(1); }
-}
-@keyframes pageEnterLeft {
-    0%   { opacity: 0; transform: translateX(-60px) scale(0.96); }
-    60%  { opacity: 1; transform: translateX(8px) scale(1.01); }
-    80%  { transform: translateX(-4px) scale(0.995); }
-    100% { opacity: 1; transform: translateX(0) scale(1); }
-}
-
-.folder-interactive-core.flip-in-right {
-    animation: pageEnterRight 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-.folder-interactive-core.flip-in-left {
-    animation: pageEnterLeft 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-/* Left grey project container thumbnail boxes */
-.work-sample-display {
-    flex: 1;
+    border: 3px solid #493628;
     border-radius: 12px;
+    box-shadow: 0px 12px 24px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    box-shadow: inset 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.overlay-card-container.active .opened-folder-card {
+    transform: scale(1);
+}
+
+/* Modal Windows Title Bar */
+.card-top-bar {
+    width: 100%;
+    height: 40px;
+    background-color: #493628;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-height: 0;
+    justify-content: space-between;
+    padding: 0 15px;
+    color: #fffae0;
 }
-/* Expanded showcase area specific to the yellow folder layout template image options */
-.landscape-mode .work-sample-display.full-width-display {
+
+.bar-title {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.close-card-btn {
+    background: none;
+    border: none;
+    color: #fffae0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.close-card-btn:hover {
+    color: #E4B1F0;
+}
+
+/* Card Content Area Layout */
+.card-main-content {
     flex: 1;
-    width: 100%;
+    padding: 25px;
+    overflow-y: auto;
 }
-.work-sample-img {
+
+/* --- ABOUT ME MODAL SPECIFIC STYLE --- */
+.about-content-layout {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    height: 100%;
+}
+
+.about-graphic-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-img-frame {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #493628;
+}
+
+.about-text-side {
+    flex: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-header {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem; /* Changed from vh */
+    color: #493628;
+    margin-bottom: 10px;
+}
+
+.heading-cur {
+    font-family: "Sacramento", serif;
+    font-size: 3.5rem; /* Changed from vh */
+    color: #E4B1F0;
+}
+
+.par-about {
+    font-size: 1rem; /* Changed from vh */
+    color: #493628;
+    line-height: 1.5;
+}
+
+/* --- WORKS SECTIONS SUB-LAYOUT (Pink/Orange/Yellow) --- */
+.folder-interactive-core {
+    display: flex;
+    gap: 25px;
+    height: 100%;
+    align-items: stretch;
+}
+
+.work-sample-display {
+    flex: 1.1;
+    border: 2px solid #493628;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ececec;
+    position: relative;
+}
+
+.work-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    border-radius: 12px;
 }
-/* Yellow folder (other works) - show full image without cropping */
-.landscape-mode .work-sample-img {
-    object-fit: contain;
-    background-color: rgba(0,0,0,0.04);
-}
-/* Right text block detailing items descriptions */
+
 .work-sample-details {
-    flex: 1;
+    flex: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
-    min-height: 0;
+    padding-right: 5px;
 }
+
 .work-title {
-    font-family: 'Short Stack', cursive;
-    font-size: 4.5vh;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem; /* Changed from vh */
+    color: #493628;
+    margin-bottom: 12px;
+    font-weight: 700;
 }
+
 .work-description {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2vh;
-    line-height: 1.45;
+    font-size: 0.95rem; /* Changed from vh */
+    color: #5c4433;
+    line-height: 1.5;
+    margin-bottom: 15px;
 }
-/* Special Color Swatch grids nested inside your Orange folder mockup */
+
+/* Color chips for Design Folder */
 .palette-swatch-box {
-    margin-top: auto;
-    margin-bottom: 25px;
     display: flex;
-    flex-direction: column;
     gap: 10px;
+    margin-top: auto;
+    padding-top: 10px;
 }
-.palette-caption {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2vh;
+
+.swatch {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid #493628;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.swatches-row {
-    display: flex;
-    gap: 12px;
+
+/* Landscape Modifier Layout for Yellow Folder (Other Works) */
+.folder-interactive-core.landscape-mode {
+    flex-direction: column;
 }
-.swatch-block {
-    width: 34px;
-    height: 34px;
-    background-color: #e0e0e0;
-    border-radius: 8px;
+
+.folder-interactive-core.landscape-mode .work-sample-display {
+    flex: none;
+    width: 100%;
+    height: 240px;
 }
-@media (max-width: 768px) {
-    .opened-folder-card {
-        max-width: 85vh;
-        height: 95vh;
+
+.folder-interactive-core.landscape-mode .work-sample-details {
+    flex: 1;
+    overflow-y: visible;
+    padding-top: 10px;
+}
+
+/* --- ULTIMATE RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablets & Small Laptops (Max 1024px) */
+@media (max-width: 1024px) {
+    :root { font-size: 15px; } /* Scales down global typography slightly */
+    
+    .landing-heading { font-size: 3rem; }
+    .landing-cursive { font-size: 6rem; }
+    
+    .character-box {
+        width: 22rem;
+        height: 22rem;
     }
+    
+    .directory-container {
+        gap: 2rem;
+    }
+}
+
+/* Mobile Devices & Small Screens (Max 768px) */
+@media (max-width: 768px) {
+    :root { font-size: 14px; }
+
+    .container {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+
+    /* Decorative scaling to avoid cluttered phone viewports */
+    .sun-decor { width: 7rem; top: 2%; right: 4%; }
+    .sparkle-decor { width: 3rem; top: 15%; left: 5%; }
+    .sparkle-right, .sparkle-left-bottom { display: none; } /* Clear screen workspace */
+
+    /* Landing Text Adjustments */
+    .landing-text {
+        margin-left: 0;
+        margin-top: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .landing-heading {
+        font-size: 2.4rem;
+    }
+    
+    .landing-cursive {
+        font-size: 4.8rem;
+        margin-top: -0.5rem;
+    }
+
+    /* Locks the character layer safely so layers don't split up on phones */
+    .character-box {
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: unset;
+        margin: 2rem auto;
+        width: 18rem;
+        height: 18rem;
+    }
+
+    /* Fixed Bottom Directory row adjustments */
+    .directory-container {
+        position: relative;
+        bottom: unset;
+        left: unset;
+        transform: unset;
+        margin: 1.5rem auto 2rem auto;
+        gap: 1.5rem;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .folder-icon {
+        width: 4.5rem;
+    }
+
+    /* Card System Mobile Layout Safety Net */
+    .opened-folder-card {
+        height: auto;
+        max-height: 85vh;
+        width: 95%;
+    }
+
+    .card-main-content {
+        padding: 15px;
+    }
+
+    /* About Folder Stacked Structure */
+    .about-content-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .about-img-frame {
+        max-width: 160px;
+    }
+
+    .about-header { font-size: 2rem; }
+    .heading-cur { font-size: 2.8rem; }
+    .par-about { font-size: 0.95rem; }
+
+    /* Pink & Orange Folders Column Layout (Pic on Top, Info on bottom) */
     .folder-interactive-core:not(.landscape-mode) {
         flex-direction: column;
         gap: 15px;
         overflow-y: auto;
         padding-bottom: 15px;
     }
+
+    .folder-interactive-core:not(.landscape-mode) .work-sample-display {
+        flex: none;
+        width: 100%;
+        height: 180px;
+    }
+
     .folder-interactive-core:not(.landscape-mode) .work-sample-details {
         flex: none;
         width: 100%;
-        height: auto;
         overflow-y: visible;
     }
+
     .work-title {
-        font-size: 2vh;
-        margin-top: 10px;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
     }
+
     .work-description {
-        font-size: 1.5vh;
+        font-size: 0.95rem;
     }
+
     .palette-swatch-box {
-        margin-top: 15px;
+        margin-top: 12px;
+        margin-bottom: 5px;
+    }
+
+    /* Yellow Folder (Other Works Landscape Layout) Small Adjustments */
+    .folder-interactive-core.landscape-mode .work-sample-display {
+        height: 150px;
     }
 }
+
+/* Super Small Screen Optimization (Max 480px) */
 @media (max-width: 480px) {
-    .work-title {
-        font-size: 1.5vh;
+    .directory-container {
+        gap: 1rem;
     }
-    .work-description {
-        font-size: 1.2vh;
+    
+    .folder-icon {
+        width: 3.8rem;
     }
+    
+    .landing-heading { font-size: 2rem; }
+    .landing-cursive { font-size: 4rem; }
 }
 
-/* --- Universal Modal Custom Back Controls --- */
-.folder-back-btn {
-    font-family: 'Short Stack', cursive;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    align-self: flex-start;
-    padding: 6px 0;
-    margin-top: 8px;
-    flex-shrink: 0;
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.folder-back-btn:hover {
-    transform: scale(1.15);
-}
-
-/* --- Clean Canvas Slider Arrow Buttons --- */
-.arrow-nav-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 0;
-    height: 0;
-    padding: 0;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
-    flex-shrink: 0;
-    transition: transform 0.2s ease-in-out;
-    z-index: 20;
-}
-.left-arrow {
-    border-right: 26px solid #ffffff;
-}
-
-.right-arrow {
-    border-left: 26px solid #ffffff;
-}
-
-.arrow-nav-btn:hover {
-    transform: scale(1.3);
-}
-
-.arrow-nav-btn:disabled {
-    opacity: 0.25;
-    cursor: default;
-}
-
-
-
-/*Footer section style*/
-.footer-section {
-    width: 100%;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-}
-.footer-layout {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    align-items: flex-end;
-    padding: 100px 40px 0 80px;
-    gap: 0;
-}
-.footer-left {
-    flex: 0 0 50%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-right: 20px;
-    padding-bottom: 150px;
-}
-.contact-header {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 15px;
-    z-index: 5;
-}
-.interested-row {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.contact-list {
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    margin: 40px 0;
-    max-width: 300px;
-}
-.contact-item-row {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    text-decoration: none;
-    color: #0c181c;
-    width: fit-content;
-    transition: transform 0.2s ease;
-}
-.square-bullet {
-    width: 4vh;
-    height: 4vh;
-    border-radius: 6px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 4px 10px rgba(79, 164, 255, 0.2);
-    overflow: hidden;
-}
-.contact-icon {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-    padding: 4px;
-}
-.contact-item-row:hover {
-    transform: translateX(8px);
-}
-.contact-item-row:hover .square-bullet {
-    background-color: #ff698a;
-}
-
-
-.footer-gif-layout {
-    flex: 0 0 50%;
-    width: 50%;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    position: relative;
-    height: 100%;
-}
-.footer-pic {
-    max-height: 580px;
-    width: auto;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 20px;
-}
-
-/* Tilt left (-15deg) on frame A, tilt right (+15deg) on frame B */
-@keyframes footerFrameA {
-    0%, 49.9% { opacity: 1;  transform: rotate(-15deg); }
-    50%, 100%  { opacity: 0;  transform: rotate(-15deg); }
-}
-@keyframes footerFrameB {
-    0%, 49.9% { opacity: 0;  transform: rotate(15deg); }
-    50%, 100%  { opacity: 1;  transform: rotate(15deg); }
-}
-
-.footer-frame-a {
-    animation: footerFrameA 1s steps(1) infinite;
-    transform-origin: bottom center;
-}
-.footer-frame-b {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    animation: footerFrameB 1s steps(1) infinite;
-    transform-origin: bottom center;
-    max-height: 580px;
-}
-
-.timestamp-note {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5vh;
-    color: #0c181c;
-    opacity: 0.85;
-    text-align: center;
-    width: 100%;
-    padding: 20px 0 10px;
-}
-
-@media (max-width: 768px) {
-    .footer-layout {
-        flex-direction: row;
-        align-items: center;
-        padding: 60px 20px 0 20px;
-    }
-    .footer-layout {
-        flex-direction: column; 
-        align-items: center;
-        text-align: center;
-        padding: 60px 20px 0 20px;
-        gap: 40px;
-    }
-    .footer-left {
-        flex: none;
-        width: 100%;
-        padding-right: 0;
-        padding-bottom: 20px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
-    .footer-gif-layout {
-        flex: none;
-        width: 100%;
-        height: 300px; 
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        position: relative;
-        margin-top: 20px;
-        padding-right: 0; 
-    }
-    .footer-pic {
-        max-height: 280px;
-        width: auto;
-        position: relative; 
-        margin-bottom: 0;
-    }
-    .footer-frame-a {
-        max-height: 280px;
-    }
-    .footer-frame-b {
-        max-height: 280px;
-        position: absolute;
-        bottom: 0;
-        left: 50%; 
-        right: unset; 
-        transform: translateX(-50%); 
-        transform-origin: bottom center;
-    }
-}
