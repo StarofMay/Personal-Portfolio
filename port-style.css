@@ -853,13 +853,13 @@ body.modal-open {
 }
 .work-title {
     font-family: 'Short Stack', cursive;
-    font-size: 2.2rem;
+    font-size: 4.5vh;
     line-height: 1.1;
     margin-bottom: 20px;
 }
 .work-description {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.3rem;
+    font-size: 2vh;
     line-height: 1.45;
 }
 /* Special Color Swatch grids nested inside your Orange folder mockup */
@@ -872,7 +872,7 @@ body.modal-open {
 }
 .palette-caption {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.2rem;
+    font-size: 2vh;
 }
 .swatches-row {
     display: flex;
